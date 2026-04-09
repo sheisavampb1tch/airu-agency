@@ -11,7 +11,7 @@
   --border-strong: rgba(10, 13, 20, 0.14);
   --accent: #d2b396;
   --accent-strong: #b28761;
-  --container: min(1240px, calc(100vw - 48px));
+  --container: calc(100vw - 30px);
   --grid-gap: 8px;
 }
 
@@ -79,6 +79,10 @@ p {
   grid-column: span 8;
 }
 
+.col-full {
+  grid-column: 1 / -1;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -119,11 +123,11 @@ p {
 }
 
 .brand__wordmark {
-  font-family: "Inter Tight", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 0.96;
+  font-family: "Inter", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .site-nav {
@@ -135,7 +139,7 @@ p {
 
 .site-nav a {
   color: var(--text-soft);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 180ms ease;
 }
@@ -224,22 +228,20 @@ p {
 }
 
 .hero__copy {
-  max-width: 920px;
+  max-width: none;
 }
 
 .display-title,
 .section-title {
-  font-family: "Inter Tight", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  letter-spacing: -0.06em;
-  line-height: 1.02;
+  letter-spacing: -0.035em;
+  line-height: 1.16;
 }
 
 .display-title {
-  display: grid;
-  gap: 6px;
-  max-width: 14ch;
-  font-size: clamp(2.9rem, 5.6vw, 4.4rem);
+  max-width: none;
+  font-size: clamp(2.7rem, 4.2vw, 4rem);
 }
 
 .display-title__muted,
@@ -247,6 +249,7 @@ p {
   color: var(--text-faint);
 }
 
+.display-title__muted,
 .section-title__muted {
   margin-right: 0.18em;
 }
@@ -282,8 +285,8 @@ p {
 
 .section-title {
   max-width: 17ch;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  line-height: 1.12;
 }
 
 .section-head__aside {
@@ -552,9 +555,13 @@ p {
 }
 
 .cta-band {
-  padding: 34px 0;
+  padding: 34px 28px;
   background: var(--surface-dark);
   color: var(--text-inverse);
+}
+
+.cta-band .layout {
+  align-items: center;
 }
 
 .section-title--inverse .section-title__muted {
@@ -684,8 +691,7 @@ p {
   }
 
   .display-title {
-    max-width: none;
-    font-size: clamp(2.6rem, 10vw, 4rem);
+    font-size: clamp(2.45rem, 10vw, 3.6rem);
   }
 
   .line-item {
@@ -696,7 +702,7 @@ p {
 
 @media (max-width: 640px) {
   :root {
-    --container: min(100vw - 28px, 100%);
+    --container: calc(100vw - 24px);
   }
 
   .header-cta,
@@ -721,6 +727,6 @@ p {
   }
 
   .cta-band {
-    padding: 28px 0;
+    padding: 24px 18px;
   }
 }
